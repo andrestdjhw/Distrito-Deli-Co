@@ -74,12 +74,12 @@
       letter-spacing: .18em;
       text-transform: uppercase;
       padding: .55rem 1.4rem;
-      border: 1.5px solid var(--artesanal);
+      border: 1.5px solid var(--verde);
       color: var(--artesanal);
       text-decoration: none;
       transition: background .25s, color .25s;
     }
-    .nav-cta:hover { background: var(--artesanal); color: var(--blanco); }
+    .nav-cta:hover { background: var(--verde); color: var(--blanco); }
 
     /* ── HERO ────────────────────────────────────── */
     .hero {
@@ -113,8 +113,8 @@
     .hero-title {
       font-family: var(--ff-display);
       font-size: clamp(2rem, 5vw, 6.5rem);
-      line-height: .95;
-      letter-spacing: .04em;
+      line-height: .85;
+      letter-spacing: .02em;
       color: var(--verde);
       opacity: 0;
       animation: fadeUp .9s .4s forwards;
@@ -655,12 +655,12 @@
       letter-spacing: .2em;
       text-transform: uppercase;
       padding: .9rem 2.5rem;
-      border: 1.5px solid var(--artesanal);
+      border: 1.5px solid var(--verde);
       color: var(--artesanal);
       text-decoration: none;
       transition: background .25s, color .25s;
     }
-    .mobile-menu-cta:hover { background: var(--artesanal); color: var(--blanco); }
+    .mobile-menu-cta:hover { background: var(--verde); color: var(--blanco); }
 
     .mobile-menu-logo {
       position: absolute;
