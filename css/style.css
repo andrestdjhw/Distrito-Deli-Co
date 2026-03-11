@@ -524,25 +524,48 @@
     }
 
     /* ── FOOTER ──────────────────────────────────── */
+    /* ✅ Footer actualizado con layout de 3 columnas: logo | centro | vacío */
     footer {
       background: var(--negro);
       padding: 4rem 5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 2rem;
     }
     .footer-logo img {
       height: 100px;
       width: auto;
       display: block;
       object-fit: contain;
-      /* Si el logo es oscuro, invertirlo para el fondo negro */
       filter: brightness(0) invert(1);
       opacity: .85;
+    }
+    .footer-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+      flex: 1;
+    }
+    .footer-tagline {
+      font-family: var(--ff-italic);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--territorio);
+      opacity: .75;
+    }
+    .footer-address {
+      font-size: .75rem;
+      letter-spacing: .08em;
+      color: var(--gris-medio);
     }
     .footer-links {
       display: flex; gap: 2rem;
       list-style: none;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .footer-links a {
       font-size: .72rem;
@@ -557,6 +580,39 @@
       font-size: .72rem;
       color: var(--gris-medio);
       letter-spacing: .05em;
+      line-height: 1.8;
+    }
+
+    /* ── WHATSAPP FLOAT BUTTON ───────────────────── */
+    /* ✅ Botón flotante de WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      background: #25d366;
+      color: #fff;
+      padding: .8rem 1.4rem .8rem 1.1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, .35);
+      font-size: .75rem;
+      font-family: var(--ff-body);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: transform .25s, box-shadow .25s, opacity .3s;
+      opacity: 1;
+    }
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, .45);
+    }
+    .whatsapp-float-label {
+      white-space: nowrap;
     }
 
     /* ── ANIMATIONS ──────────────────────────────── */
@@ -689,7 +745,17 @@
       .info-band { grid-template-columns: 1fr; padding: 2rem; }
       .info-cell { border-left: none; border-top: 1px solid rgba(68,68,42,.1); }
       .info-cell:first-child { border-top: none; }
-      footer { flex-direction: column; gap: 2rem; padding: 3rem 2rem; text-align: center; }
+      footer {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 3rem 2rem;
+        text-align: center;
+      }
       .footer-links { flex-wrap: wrap; justify-content: center; }
       .strip { gap: 2rem; }
+      /* Ocultar label del botón flotante en mobile muy pequeño */
+      @media (max-width: 400px) {
+        .whatsapp-float-label { display: none; }
+        .whatsapp-float { padding: 1rem; border-radius: 50%; }
+      }
     }
