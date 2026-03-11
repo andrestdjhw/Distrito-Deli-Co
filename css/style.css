@@ -759,3 +759,50 @@
         .whatsapp-float { padding: 1rem; border-radius: 50%; }
       }
     }
+
+/* ── MAPA ────────────────────────────────────── */
+.map-section {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  min-height: 480px;
+  background: var(--negro);
+}
+
+.map-embed {
+  position: relative;
+  min-height: 480px;
+}
+
+.map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: grayscale(20%) contrast(1.05);
+}
+
+.map-info {
+  background: var(--negro);
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.map-info .section-label { color: var(--oliva); }
+.map-info .section-title { color: var(--territorio); }
+.map-info .section-body  { color: var(--gris-medio); }
+
+@media (max-width: 960px) {
+  .map-section {
+    grid-template-columns: 1fr;
+  }
+  .map-embed {
+    min-height: 300px;
+    position: relative;
+  }
+  .map-info {
+    padding: 3rem 2rem;
+  }
+}
