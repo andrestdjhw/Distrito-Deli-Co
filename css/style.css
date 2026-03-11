@@ -181,7 +181,7 @@
 
     .hero-right {
       position: relative;
-      background: var(--verde);
+      background: var(--territorio);
       overflow: hidden;
     }
 
@@ -193,26 +193,26 @@
     }
 
     /* abstract pattern circles */
-    .hero-right::before {
-      content: '';
-      position: absolute;
-      width: 500px; height: 500px;
-      border-radius: 50%;
-      border: 80px solid rgba(169,162,81,.18);
-      top: -120px; right: -120px;
-    }
+    .hero-right::before,
     .hero-right::after {
-      content: '';
-      position: absolute;
-      width: 300px; height: 300px;
-      border-radius: 50%;
-      background: rgba(103,57,33,.25);
-      bottom: 60px; left: -60px;
+        display: none;
+    }
+
+    /* imagen del mapa */
+    .hero-map-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.92;
+        animation: fadeUp .9s .3s both;
     }
 
     .hero-img-card {
       position: relative; z-index: 2;
-      background: rgba(233,226,208,.08);
+      background: rgba(234,200,114,.2);
       border: 1px solid rgba(233,226,208,.2);
       padding: 2.5rem;
       backdrop-filter: blur(4px);
@@ -223,12 +223,12 @@
       font-family: var(--ff-serif);
       font-size: 1.5rem;
       font-weight: 400;
-      color: var(--territorio);
+      color: var(--verde);
       margin-bottom: .5rem;
     }
     .hero-img-card p {
       font-size: .85rem;
-      color: rgba(233,226,208,.65);
+      color: var(--verde);
       line-height: 1.6;
     }
 
@@ -534,7 +534,7 @@
       gap: 2rem;
     }
     .footer-logo img {
-      height: 100px;
+      height: 120px;
       width: auto;
       display: block;
       object-fit: contain;
