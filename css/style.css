@@ -380,16 +380,28 @@
       color: var(--territorio);
       margin-bottom: .7rem;
     }
+    .menu-card h5 {
+      margin-top: 0.5rem;  
+      font-family: var(--ff-serif);
+      font-size: 1.0rem;
+      font-weight: 400;
+      color: var(--territorio);
+    }
     .menu-card p {
       font-size: .82rem;
       line-height: 1.6;
       color: rgba(233,226,208,.55);
     }
+
     .menu-card .price {
-      font-family: var(--ff-display);
-      font-size: 1.3rem;
-      color: var(--oliva);
-      margin-top: 1.5rem;
+        font-family: var(--ff-display);
+        font-size: 0.5rem;
+        color: var(--oliva);
+        margin-top: 0.5rem;
+        padding-top: 0;
+        align-self: unset;
+        display: block;
+        text-align: right;
     }
 
     /* ── EXPERIENCE ──────────────────────────────── */
