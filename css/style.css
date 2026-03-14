@@ -508,29 +508,61 @@
     /* ── EXPERIENCE ──────────────────────────────── */
     .experience {
       display: grid;
-      grid-template-columns: 1fr 1.4fr;
+      grid-template-columns: 1fr 1fr;
     }
 
+    /* — Izquierda con imagen de fondo — */
     .exp-left {
-      background: var(--trayecto);
-      padding: 7rem 4rem;
-      display: flex; flex-direction: column; justify-content: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .exp-left .section-label { color: var(--verde); }
-    .exp-left .section-title { color: var(--verde); }
-    .exp-left .section-body { color: rgba(28,26,20,.6); }
+
+    .exp-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    .exp-left-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(28, 26, 20, 0.68);
+      z-index: 1;
+    }
+
+    .exp-left-content {
+      position: relative;
+      z-index: 2;
+      padding: 5rem 4rem;
+    }
+
+    .exp-left-content .section-label { color: var(--oliva); }
+    .exp-left-content .section-title { color: var(--territorio); }
+    .exp-left-content .section-body  { color: rgba(233,226,208,.7); }
 
     .exp-features {
       margin-top: 3rem;
-      display: flex; flex-direction: column; gap: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
     }
     .exp-feat {
-      display: flex; gap: 1rem; align-items: flex-start;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
     }
     .exp-feat-icon {
       width: 32px; height: 32px;
-      background: var(--verde);
-      color: var(--territorio);
+      background: var(--oliva);
+      color: var(--negro);
       display: flex; align-items: center; justify-content: center;
       font-size: .9rem;
       flex-shrink: 0;
@@ -540,22 +572,26 @@
       font-family: var(--ff-serif);
       font-weight: 400;
       font-size: 1rem;
-      color: var(--verde);
+      color: var(--territorio);
       margin-bottom: .2rem;
     }
     .exp-feat-text p {
       font-size: .8rem;
-      color: rgba(28,26,20,.55);
+      color: rgba(233,226,208,.55);
       line-height: 1.5;
     }
 
+    /* — Derecha con CEO + misión/visión — */
     .exp-right {
       background: var(--artesanal);
-      padding: 7rem 5rem;
+      padding: 0;
       position: relative;
       overflow: hidden;
-      display: flex; flex-direction: column; justify-content: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
+
     .exp-right::before {
       content: 'DD&CO';
       position: absolute;
@@ -569,33 +605,86 @@
       pointer-events: none;
     }
 
-    .quote-block {
-      position: relative; z-index: 1;
+    .exp-right-content {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
     }
-    .quote-block blockquote {
+
+    /* CEO */
+    .exp-ceo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.2rem;
+    }
+
+    .exp-ceo-img {
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,.85);
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,.25);
+    }
+
+    .exp-ceo-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      /* Placeholder si no hay imagen */
+      background: var(--verde);
+    }
+
+    .exp-ceo-quote {
       font-family: var(--ff-serif);
       font-style: italic;
-      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-      line-height: 1.45;
+      font-size: clamp(1rem, 1.6vw, 1.35rem);
+      line-height: 1.55;
       color: var(--territorio);
-      font-weight: 400;
+      max-width: 380px;
     }
-    .quote-block cite {
+
+    .exp-ceo-cite {
       display: block;
-      margin-top: 1.5rem;
-      font-size: .75rem;
+      font-size: .7rem;
       letter-spacing: .2em;
       text-transform: uppercase;
       color: var(--oliva);
       font-style: normal;
     }
-    .quote-mark {
-      font-family: var(--ff-display);
-      font-size: 5rem;
+
+    /* Misión y Visión */
+    .exp-mv {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      border-top: 1px solid rgba(233,226,208,.15);
+      padding-top: 2.5rem;
+    }
+
+    .exp-mv-block .section-label {
       color: var(--oliva);
-      line-height: .5;
-      margin-bottom: 1.5rem;
-      opacity: .7;
+      margin-bottom: .6rem;
+    }
+
+    .exp-mv-text {
+      font-size: .85rem;
+      line-height: 1.75;
+      color: rgba(233,226,208,.65);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .experience { grid-template-columns: 1fr; }
+      .exp-left { min-height: 420px; }
+      .exp-left-content { padding: 4rem 2rem; }
+      .exp-right-content { padding: 3rem 2rem; }
     }
 
     /* ── HOURS / LOCATION ────────────────────────── */
@@ -603,7 +692,7 @@
       background: var(--blanco);
       padding: 5rem;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 2px;
     }
     .info-cell {
