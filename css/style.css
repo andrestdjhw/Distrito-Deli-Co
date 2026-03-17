@@ -44,7 +44,13 @@
       top: 0; left: 0; right: 0;
       z-index: 101;
       background: var(--verde);
-      padding: .4rem 4rem;
+      padding: .8rem 4.1rem;
+    }
+
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
     }
 
     .top-bar-inner {
@@ -57,7 +63,7 @@
       display: inline-flex;
       align-items: center;
       gap: .45rem;
-      font-size: .9rem;
+      font-size: 0.8rem;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: rgba(233,226,208,.6);
@@ -939,6 +945,37 @@
     }
     .mobile-menu-logo img { height: 36px; width: auto; }
 
+    .mobile-menu-footer {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: var(--verde);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .8rem;
+    }
+
+    .mobile-menu-footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(233,226,208,.6);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .mobile-menu-footer-link:hover { color: var(--oliva); }
+
+    .mobile-menu-footer-socials {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
     /* ── RESPONSIVE ──────────────────────────────── */
     @media (max-width: 960px) {
       .top-bar { display: none; }
@@ -973,6 +1010,15 @@
       @media (max-width: 400px) {
         .whatsapp-float-label { display: none; }
         .whatsapp-float { padding: 1rem; border-radius: 50%; }
+        .mobile-menu-cta {
+          margin-bottom: 7rem;
+        }
+        .mobile-menu-footer {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: .6rem;
+          padding: .8rem 1.5rem;
+        }
       }
     }
 
@@ -1020,5 +1066,11 @@
   }
   .map-info {
     padding: 3rem 2rem;
+  }
+  .whatsapp-float {
+    display: none;
+  }
+  .mobile-menu-cta {
+    margin-bottom: 5rem; /* deja espacio sobre el footer */
   }
 }
